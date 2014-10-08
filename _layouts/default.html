@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>{% if page.title %}{{ page.title }} - {% endif %}DEPCON</title>
+        <meta name="description" content="{{ page.description }}"/>
+        <meta name="robots" content="index,follow,archive"/>
+        <meta property="og:image" content="/images/og-logo.png"/>
+        <meta property="og:title" content="DEPCON: Deployment Readiness Condition"/>
+        <meta property="og:description" content="Know the health of your project with the deployment frequency."/>
+        <meta property="og:url" content="http://depcon.corretge.com"/>
+        <meta property="og:site_name" content="DEPCON: Deployment Readiness Condition"/>
+        <meta property="og:type" content="website"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="/styles/all.css"/>
+        <link rel="stylesheet" href="/styles/print.css" media="print, handheld"/>
+        <link rel="stylesheet" href="/styles/syntax.css"/>
+        <link rel="icon" href="/images/favicon.png" type="image/png"/>
+        <script>
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-362072-7']);
+        _gaq.push(['_trackPageview']);
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+        </script>
+    </head>
+    <body>
+        <nav class="site-navigation">
+            <div class="build-date">Last Updated: {{ site.time }}</div>
+            <ul>
+                <li><a href="/#site-header">Welcome</a></li>
+                {% assign lastIsChild = false %}
+                {% for post in site.posts reversed %}
+                    {% if post.isChild and lastIsChild != true %}<ul>{% endif %}
+                    {% if lastIsChild and post.isChild != true %}</ul>{% endif %}
+                    <li><a href="/#{{ post.title | downcase | replace:' ','_' | replace:'(','' | replace:')','' | replace:'.','' | replace:'-','' }}">{{ post.title }}</a>
+                    {% assign lastIsChild = post.isChild %}
+                {% endfor %}
+                <li><a href="/#site-footer">Credits</a></li>
+            </ul>
+        </nav>
+        <div class="site-content">
+
+            <a class="fork-me" href="https://github.com/corretgecom/depcon">
+                <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+            </a>
+
+            <header class="site-header" id="site-header">
+                <hgroup>
+                    <h1 class="site-title"><a href="/">DEPCON</a></h1>
+                    <h2 class="site-slogan">Deployment Readiness Condition</h2>
+                </hgroup>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://depcon.corretge.com/" data-size="large" data-hashtags="php">Tweet</a>
+            </header>
+            {{ content }}
+            <footer class="site-footer" id="site-footer">
+                <h2 class="epsilon">Created and maintained by</h2>
+                <ul>
+                    <li><a href="http://corretge.cat/staff/alex-corretge/">Àlex Corretgé</a></li>
+                </ul>
+            </footer>
+        </div>
+
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+        <script src="/scripts/setup.js"></script>
+    </body>
+</html>

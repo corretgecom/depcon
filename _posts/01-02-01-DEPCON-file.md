@@ -1,8 +1,15 @@
 #The DEPCON file
 
-At the root of the project we will have a DEPCON.json file where, at least, contains only the DEPCON level number:
+At the root of the project we will have a DEPCON.yml file where, at least, contains the current DEPCON level:
 
-`{"level":4}`
+`currentLevel: 4
+levels:
+  0: ZERO
+  1: HOUSTON
+  2: HURRY
+  3: CALM
+  4: SPRINT
+  5: VERSION`
 
 Could be interesting that every DEPCON change has a dedidated commit made by the DEPCON level owner and a very clear commit message.
 

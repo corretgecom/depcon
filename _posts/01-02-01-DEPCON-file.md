@@ -1,4 +1,4 @@
-#The DEPCON file
+# The DEPCON file
 
 At the root of the project we will have a DEPCON.yml file where, at least, contains the current DEPCON level:
 

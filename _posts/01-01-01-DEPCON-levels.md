@@ -1,4 +1,4 @@
-#DEPCON levels
+# DEPCON levels
 
 As the military norm DEFCON has 5 levels, in DEPCON we have 6.
 

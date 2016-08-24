@@ -7,7 +7,7 @@ I agree totaly with [Michael King](https://twitter.com/michaelking0191) in his p
 3. Thursday Morning. Exactly the same benefits and disadvantages as Wednesday, but closer to the weekend where developers are not on hand.
 
 
-####References:
+#### References:
 
 * [Weekly Releases: When is the Best Time to Deploy Code
 ](http://www.mannionking.com/weekly-releases-when-is-the-best-time-to-deploy-code/)
